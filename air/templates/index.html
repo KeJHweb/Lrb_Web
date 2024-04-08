@@ -1,0 +1,240 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>首页</title>
+        <style>
+            .text-center {
+                color: black;
+                font-weight: bold;
+                font-size: 32px;
+            }
+
+            .subtitle {
+                text-align: center; /* 文本水平居中 */
+                color: rgba(0, 0, 0, 0.5);
+            }
+
+            .photo-wall {
+                display: flex; /* 使用弹性布局 */
+                flex-wrap: wrap; /* 换行显示 */
+                gap: 10px; /* 图片之间的间隔 */
+            }
+
+            .photo-item {
+                width: calc(33.33% - 10px); /* 每行显示3列，减去间隔宽度 */
+                margin-bottom: 10px; /* 底部间距 */
+                overflow: hidden; /* Ensure the zoom effect doesn't overflow the container */
+                border-radius: 10px; /* Optional: Adds rounded corners to your photos */
+            }
+
+            .photo-item img {
+                width: 100%; /* 图片宽度100% */
+                height: 400px; /* 固定高度 */
+                object-fit: cover; /* 保持宽高比并填充容器 */
+                display: block; /* 块级元素 */
+                border: 5px solid #000000; /* 添加边框，颜色为灰色 */
+                transition: transform 0.5s ease, filter 0.25s ease; /* Smooth transition for transform and filter effects */
+            }
+
+            .photo-item:hover img {
+                transform: scale(1.1); /* Scale up image to 110% */
+                filter: brightness(1.1); /* Optional: Slightly increase brightness on hover */
+            }
+
+            .container {
+                position: relative;
+                display: flex;
+                align-items: center;
+            }
+
+            .image {
+                flex: 0 0 50%; /* 图片占据的宽度，这里设为50% */
+                position: relative; /* 相对定位 */
+            }
+
+            .text {
+                flex: 1; /* 文字部分占据剩余宽度 */
+                padding-left: 20px; /* 左边距，增加间距以美化布局 */
+            }
+
+            .text p:first-child {
+                margin-top: 0; /* 第一个段落的顶部间距设置为0 */
+            }
+
+            .overlay-text {
+                position: absolute;
+                top: 10px; /* 文字距离图片上边缘的距离 */
+                left: 10px; /* 文字距离图片左边缘的距离 */
+                color: white; /* 文字颜色 */
+                background-color: rgba(0, 0, 0, 0.5); /* 文字背景颜色及透明度 */
+                padding: 5px 10px; /* 文字内边距 */
+            }
+
+            .image-container {
+                display: flex;
+                justify-content: space-between;
+                gap: 20px; /* 调整图片之间的间距 */
+            }
+
+            .image-container div {
+                text-align: center;
+            }
+
+            .image-container img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px; /* 图片圆角 */
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 图片阴影 */
+            }
+
+            .image-container button {
+                margin-top: 10px;
+            }
+
+            body, html {
+                width: 100%;
+                height: 100%;
+                margin: 0 0 0 0;
+                overflow: auto;
+            }
+
+            #map-container {
+                width: 500px; /* 固定宽度 */
+                height: 400px; /* 固定高度 */
+                position: relative;
+                z-index: 1;
+                /* 添加其他样式 */
+            }
+        </style>
+        <script type="text/javascript"
+                src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=4nS0oxzjz2j0WUJVOqvoZdKulWtV7RsO"></script>
+
+    </head>
+    <body>
+    <!-- 轮播 -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- 轮播图片 -->
+        <div class="carousel-inner">
+            <br>
+            <div class="carousel-item active">
+                <img src="{% static '/img/LOGO.png' %}" class="d-block mx-auto" style="max-height: 400px; width: auto;">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static '/img/LOGO2.jpg' %}" class="d-block mx-auto"
+                     style="max-height: 400px; width: auto;">
+            </div>
+        </div>
+
+        <!-- 左右切换按钮 -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- 正文部分 -->
+    <p class="text-center">服务项目</p>
+    <div class="image-container">
+        <div>
+            <img src="{% static 'img/teach1.jpg' %}" alt="Image 1">
+            <a type="button" class="btn btn-outline-light text-dark" href="/index/service_1">驾校陪练陪驾服务</a>
+        </div>
+        <div>
+            <img src="{% static 'img/teach2.jpg' %}" alt="Image 2">
+            <a type="button" class="btn btn-outline-light text-dark" href="/index/service_2">驾校陪练服务</a>
+        </div>
+        <div>
+            <img src="{% static 'img/teach3.jpg' %}" alt="Image 3">
+            <a type="button" class="btn btn-outline-light text-dark" href="/index/service_3">驾校陪驾服务</a>
+        </div>
+    </div>
+    <p class="text-center">驾校实景</p>
+    <p class="subtitle">武汉海潮阳光驾校有限公司</p>
+
+    <div class="photo-wall">
+        <div class="photo-item">
+            <img src="{% static 'img/scene3.jpg' %}" alt="Photo 1">
+        </div>
+        <div class="photo-item">
+            <img src="{% static 'img/scene1.jpg' %}" alt="Photo 2">
+        </div>
+        <div class="photo-item">
+            <img src="{% static 'img/scene2.jpg' %}" alt="Photo 3">
+        </div>
+        <div class="photo-item">
+            <img src="{% static 'img/road1.jpg' %}" alt="Photo 4">
+        </div>
+        <div class="photo-item">
+            <img src="{% static 'img/road2.jpg' %}" alt="Photo 5">
+        </div>
+        <div class="photo-item">
+            <img src="{% static 'img/road3.jpg' %}" alt="Photo 6">
+        </div>
+        <div>
+            <p></p>
+        </div>
+
+        <div class="container mt-3" style="display: flex; align-items: center; justify-content: center;">
+            <div style="position: relative; display: flex; justify-content: flex-end;">
+                <div style="position: relative;">
+                    <img src="{% static 'img/workstation.jpg' %}" class="rounded " alt="Cinque Terre"
+                         style="margin-left: 1px; width:100%; height: auto;">
+                </div>
+                <div style="position: absolute; top: 50%; right: 0; transform: translate(0, -50%); background-color: #FAF3E0; padding: 20px; border-radius: 5px; width: 300px;">
+                    <p class="h2" style="text-align: center">公司介绍</p>
+                    <p>
+                        武汉海朝阳光汽车驾驶培训有限公司提供全面的驾驶培训及相关服务，包括驾考场地服务、二手车交易、车辆修维和网络技术服务。设施先进，教学规范，深受好评，荣获“全国文明诚信优质服务示范单位”等荣誉，连续两年被评为“消费者信得过企业”，是业界的佼佼者。</p>
+                    <a type="button" class="btn btn-outline-primary" style="text-align: center"
+                       href="/index/introduce/more">查看更多</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <img class="" src="{% static 'img/advantage2 .png' %}" alt="Chania" style="width: 100%; height: auto;">
+    </div>
+
+    <div class="container mt-3">
+        <img class="" src="{% static 'img/service.png' %}" alt="Chania" style="width: 100%; height: auto;">
+    </div>
+
+    <div class="container mt-3">
+        <img class="" src="{% static 'img/contact.png' %}" style="width: 100%; height: 100%;" alt="Background Image">
+        <button id="reset-button" type="button" class="btn btn-info">回到驾校</button>
+
+        <div id="map-container" style="width:500px; height: 400px; position: absolute;  right: 30px; z-index: 1;"></div>
+    </div>
+    </body>
+    </html>
+    <script>
+        var map = new BMapGL.Map("map-container");          // 创建地图实例
+        var point = new BMapGL.Point(114.450442, 30.48311);  // 创建点坐标
+        map.centerAndZoom(point, 19);                 // 初始化地图，设置中心点坐标和地图级别
+        map.enableScrollWheelZoom(true);
+        map.setHeading(64.5);   //设置地图旋转角度
+        map.setTilt(73);       //设置地图的倾斜角度
+         // 获取回到坐标点的按钮
+        var resetButton = document.getElementById('reset-button');
+        // 添加点击事件监听器
+        resetButton.addEventListener('click', function() {
+            // 回到指定坐标点
+            map.panTo(point);
+        });
+
+    </script>
+
+{% endblock %}

@@ -1,0 +1,8 @@
+.small-text {
+    font-size: 10px; /* 调整文字大小 */
+    line-height: 1px; /* 调整行高 */
+    display: block; /* 让文本换行显示 */
+}
+.text{
+    text-align: center;
+}

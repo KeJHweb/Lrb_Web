@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>项目服务</title>
+</head>
+<body>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-6"> <!-- 图片占据一半 -->
+            <div class="image-container">
+                <img src="{% static 'img/teach2.jpg' %}" alt="Image 1" class="img-fluid">
+            </div>
+        </div>
+        <div class="col-md-6"> <!-- 文字占据一半 -->
+            <p class="h3" style="font-weight:bold;">驾校陪练服务</p>
+            <div class="card bg-light text-dark">
+                <div class="card-body" style="color: red; font-weight: bold; font-size: 25px;">价格面议</div>
+            </div><p></p>
+            <div class="card bg-secondary text-white" style="max-width: 400px; ">
+                    <div class="card-body">专业教练团队 个性化教学 先进设施和车辆 考虑周到</div>
+            </div>
+
+  </div>
+        </div>
+    </div>
+<div class="container mt-3">
+    <table class="table table-borderless">
+        <thead>
+            <tr>
+                <th><div class="card bg-dark text-white" style="max-width: 100px">
+    <div class="card-body" >产品详情</div>
+  </div></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>武汉海潮阳光驾校是汽车驾培行业的领军者，拥有多年丰富的经验，已成功培训了数以万计的学员。我们精心筛选出经验丰富、性格亲和的教练团队，备受学员好评。驾校配备了专业副刹车系统的陪练车辆，确保学员在学习过程中的安全。全面的保险覆盖，消除了安全隐患，让学员放心学习。</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>
+
+
+{% endblock %}

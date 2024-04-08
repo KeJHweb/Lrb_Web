@@ -1,0 +1,102 @@
+.text-center {
+    color: black;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.subtitle {
+    text-align: center; /* 文本水平居中 */
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.photo-wall {
+    display: flex; /* 使用弹性布局 */
+    flex-wrap: wrap; /* 换行显示 */
+    gap: 10px; /* 图片之间的间隔 */
+}
+
+.photo-item {
+    width: calc(33.33% - 10px); /* 每行显示3列，减去间隔宽度 */
+    margin-bottom: 10px; /* 底部间距 */
+    overflow: hidden; /* Ensure the zoom effect doesn't overflow the container */
+    border-radius: 10px; /* Optional: Adds rounded corners to your photos */
+}
+
+.photo-item img {
+    width: 100%; /* 图片宽度100% */
+    height: 400px; /* 固定高度 */
+    object-fit: cover; /* 保持宽高比并填充容器 */
+    display: block; /* 块级元素 */
+    border: 5px solid #000000; /* 添加边框，颜色为灰色 */
+    transition: transform 0.5s ease, filter 0.25s ease; /* Smooth transition for transform and filter effects */
+}
+
+.photo-item:hover img {
+    transform: scale(1.1); /* Scale up image to 110% */
+    filter: brightness(1.1); /* Optional: Slightly increase brightness on hover */
+}
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.image {
+    flex: 0 0 50%; /* 图片占据的宽度，这里设为50% */
+    position: relative; /* 相对定位 */
+}
+
+.text {
+    flex: 1; /* 文字部分占据剩余宽度 */
+    padding-left: 20px; /* 左边距，增加间距以美化布局 */
+}
+
+.text p:first-child {
+    margin-top: 0; /* 第一个段落的顶部间距设置为0 */
+}
+
+.overlay-text {
+    position: absolute;
+    top: 10px; /* 文字距离图片上边缘的距离 */
+    left: 10px; /* 文字距离图片左边缘的距离 */
+    color: white; /* 文字颜色 */
+    background-color: rgba(0, 0, 0, 0.5); /* 文字背景颜色及透明度 */
+    padding: 5px 10px; /* 文字内边距 */
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* 调整图片之间的间距 */
+}
+
+.image-container div {
+    text-align: center;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* 图片圆角 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 图片阴影 */
+}
+
+.image-container button {
+    margin-top: 10px;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0 0 0 0;
+    overflow: auto;
+}
+
+#map-container {
+    width: 500px; /* 固定宽度 */
+    height: 400px; /* 固定高度 */
+    position: relative;
+    z-index: 1;
+    /* 添加其他样式 */
+}

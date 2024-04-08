@@ -1,0 +1,406 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>版型介绍</title>
+</head>
+<body>
+
+<style>
+    .big{
+        font-weight: bold;
+    }
+    .list_btn{
+        background-color: white;
+        color: black;
+        border: none;
+        font-weight: bold;
+        }
+        .list_primary_btn{
+            background-color: #b6d4fe;
+            color: blue;
+            border: none;
+            {#font-weight: bold;#}
+        }
+
+</style>
+<div class="container mt-3">
+    <table class="table table-bordered">
+        <tbody>
+        <div class="alert alert-info">
+            <strong class="head">班型介绍</strong>
+        </div>
+        <tr>
+        <td style="width: 100px; height: 100px;">
+            <img src="{% static '/img/yiyuan.jpg' %}" class="rounded " alt="Cinque Terre" width="100" height="100"> </td>
+        <td>
+            <div class="container mt-3">
+                <button type="button" class="btn list_btn" data-bs-toggle="modal" data-bs-target="#myModal">
+                    免费试学
+                </button><br>
+                <button type="button" class="btn btn-info" >45天拿本</button>
+                <button type="button" class="btn btn-info" >自行前往</button>
+                <button type="submit" class="btn btn-info" >一人一车</button>
+
+            </div>
+           <!-- 模态框 -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- 模态框头部 -->
+      <div class="modal-header">
+        <h4 class="modal-title">课程简介</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- 模态框内容 -->
+      <div class="modal-body">
+        <table class="table table-bordered table-hover" >
+    <thead>
+      <tr>
+        <td class="big">训练科目</td>
+        <td>科目二</td>
+        <td>科目三</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="big">练车人数</td>
+        <td>四人一车</td>
+        <td>四人一车</td>
+      </tr>
+      <tr>
+        <td class="big">练车时间</td>
+        <td>周一到周日</td>
+
+      </tr>
+      <tr>
+        <td class="big">接送方式</td>
+        <td>自行前往</td>
+
+      </tr>
+		<tr>
+        <td class="big">拿本时长</td>
+        <td>90天以内</td>
+
+      </tr>
+		<tr>
+        <td class="big">约车方式</td>
+        <td>自行协商</td>
+
+      </tr>
+		<tr>
+        <td class="big">适合人群</td>
+        <td>18-60岁</td>
+
+      </tr>
+    </tbody>
+  </table>
+      </div>
+
+      <!-- 模态框底部 -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">关闭</button>
+      </div>
+
+
+
+      <tr>
+        <td style="width: 100px; height: 100px;">
+            <img src="{% static '/img/2.jpg' %}" class="rounded" alt="Cinque Terre" width="100" height="100"></td>
+        <td><button type="button" class="btn list_btn" data-bs-toggle="modal" data-bs-target="#myModal_1">
+                    C1手动挡100抵500学费券
+                </button><br>
+             <div class="container mt-3">
+                <button type="button" class="btn btn-info">45天拿本</button>
+                <button type="button" class="btn btn-info">自行前往</button>
+                <button type="submit" class="btn btn-info">一人一车</button>
+            </div>
+                       <!-- 模态框 -->
+            <div class="modal" id="myModal_1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+
+                  <!-- 模态框头部 -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">课程简介</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+
+                  <!-- 模态框内容 -->
+                  <div class="modal-body">
+                    <table class="table table-bordered table-hover" >
+                <thead>
+                  <tr>
+                    <td class="big">训练科目</td>
+                    <td>科目二</td>
+                    <td>科目三</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="big">练车人数</td>
+                    <td>四人一车</td>
+                    <td>四人一车</td>
+                  </tr>
+                  <tr>
+                    <td class="big">练车时间</td>
+                    <td>周一到周日</td>
+
+                  </tr>
+                  <tr>
+                    <td class="big">接送方式</td>
+                    <td>自行前往</td>
+
+                  </tr>
+                    <tr>
+                    <td class="big">拿本时长</td>
+                    <td>90天以内</td>
+
+                  </tr>
+                    <tr>
+                    <td class="big">约车方式</td>
+                    <td>自行协商</td>
+
+                  </tr>
+                    <tr>
+                    <td class="big">适合人群</td>
+                    <td>18-60岁</td>
+
+                  </tr>
+                </tbody>
+              </table>
+                  </div>
+
+                  <!-- 模态框底部 -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">关闭</button>
+                  </div>
+
+
+      <tr>
+        <td style="width: 100px; height: 100px; ">
+            <img src="{% static '/img/3.jpg' %}" class="rounded" alt="Cinque Terre" width="100" height="100">
+        </td>
+          <
+        <td><button type="button" class="btn list_btn" data-bs-toggle="modal" data-bs-target="#myModal_2">
+
+            C2自动挡100抵500学费券
+        </button><br>
+        <div class="container mt-3">
+                <button type="button" class="btn btn-info">45天拿本</button>
+                <button type="button" class="btn btn-info">自行前往</button>
+                <button type="submit" class="btn btn-info">一人一车</button>
+            </div>
+            <div class="modal" id="myModal_2">
+              <div class="modal-dialog">
+                <div class="modal-content">
+
+                  <!-- 模态框头部 -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">课程简介</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+
+                  <!-- 模态框内容 -->
+                  <div class="modal-body">
+                    <table class="table table-bordered table-hover" >
+                <thead>
+                  <tr>
+                    <td class="big">训练科目</td>
+                    <td>科目二</td>
+                    <td>科目三</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="big">练车人数</td>
+                    <td>四人一车</td>
+                    <td>四人一车</td>
+                  </tr>
+                  <tr>
+                    <td class="big">练车时间</td>
+                    <td>周一到周日</td>
+
+                  </tr>
+                  <tr>
+                    <td class="big">接送方式</td>
+                    <td>自行前往</td>
+
+                  </tr>
+                    <tr>
+                    <td class="big">拿本时长</td>
+                    <td>90天以内</td>
+
+                  </tr>
+                    <tr>
+                    <td class="big">约车方式</td>
+                    <td>自行协商</td>
+
+                  </tr>
+                    <tr>
+                    <td class="big">适合人群</td>
+                    <td>18-60岁</td>
+
+                  </tr>
+                </tbody>
+              </table>
+                  </div>
+
+                  <!-- 模态框底部 -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">关闭</button>
+                  </div>
+
+
+
+
+	   <tr>
+        <td style="width: 100px; height: 100px;">
+            <img src="{% static '/img/4.jpg' %}" class="rounded" alt="Cinque Terre" width="100" height="100">
+        </td>
+        <td><button type="button" class="btn list_btn" data-bs-toggle="modal" data-bs-target="#myModal_4">
+            D摩托车一天拿证
+        </button><br>
+            <div class="container mt-3">
+                <button type="button" class="btn btn-info">45天拿本</button>
+                <button type="button" class="btn btn-info">自行前往</button>
+                <button type="submit" class="btn btn-info">一人一车</button>
+            </div>
+            <div class="modal" id="myModal_4">
+              <div class="modal-dialog">
+                <div class="modal-content">
+
+                  <!-- 模态框头部 -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">课程简介</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  </div>
+
+                  <!-- 模态框内容 -->
+                  <div class="modal-body">
+                    <table class="table table-bordered table-hover" >
+                <thead>
+                  <tr>
+                    <td class="big">训练科目</td>
+                    <td>科目二</td>
+                    <td>科目三</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="big">练车人数</td>
+                    <td>四人一车</td>
+                    <td>四人一车</td>
+                  </tr>
+                  <tr>
+                    <td class="big">练车时间</td>
+                    <td>周一到周日</td>
+
+                  </tr>
+                  <tr>
+                    <td class="big">接送方式</td>
+                    <td>自行前往</td>
+
+                  </tr>
+                    <tr>
+                    <td class="big">拿本时长</td>
+                    <td>90天以内</td>
+
+                  </tr>
+                    <tr>
+                    <td class="big">约车方式</td>
+                    <td>自行协商</td>
+
+                  </tr>
+                    <tr>
+                    <td class="big">适合人群</td>
+                    <td>18-60岁</td>
+
+                  </tr>
+                </tbody>
+              </table>
+                  </div>
+
+                  <!-- 模态框底部 -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">关闭</button>
+                  </div>
+
+            </td>
+
+      </tr>
+      <tr>
+        <td style="width: 100px; height: 100px;">
+            <img src="{% static '/img/5.jpg' %}" class="rounded" alt="Cinque Terre" width="100" height="100">
+        </td>
+      <td><button class="list_btn">
+          C1手动挡学时班
+      </button><br>
+          <div class="container mt-3">
+                <button type="button" class="btn btn-info">45天拿本</button>
+                <button type="button" class="btn btn-info">自行前往</button>
+                <button type="submit" class="btn btn-info">一人一车</button>
+            </div>
+          </td>
+      </tr>
+
+      
+      <tr>
+        <td style="width: 100px; height: 100px;">
+            <img src="{% static '/img/6.jpg' %}" class="rounded" alt="Cinque Terre" width="100" height="100">
+        </td>
+        <td><button class="list_btn">
+            C2自动挡学时班
+        </button><br>
+            <div class="container mt-3">
+                <button type="button" class="btn btn-info">45天拿本</button>
+                <button type="button" class="btn btn-info">自行前往</button>
+                <button type="submit" class="btn btn-info">一人一车</button>
+            </div>
+            </td>
+
+      </tr>
+	   <tr>
+        <td style="width: 100px; height: 100px;">
+            <img src="{% static '/img/6.jpg' %}" class="rounded" alt="Cinque Terre" width="100" height="100">
+        </td>
+        <td><button class="list_btn">
+           C2自动挡新能源空调车班
+        </button><br>
+            <div class="container mt-3">
+                <button href="./article" type="button" class="btn btn-info">45天拿本</button>
+                <button type="button" class="btn btn-info">自行前往</button>
+                <button type="submit" class="btn btn-info">一人一车</button>
+            </div>
+            </td>
+
+      </tr>
+      <tr>
+        <td style="width: 100px; height: 100px; ">
+            <img src="{% static '/img/7.jpg' %}" class="rounded" alt="Cinque Terre" width="100" height="100">
+        </td>
+        <td>
+            <button class="list_btn">
+                学前班
+            </button><br>
+            <div class="container mt-3">
+                <button type="button" class="btn btn-info">45天拿本</button>
+                <button type="button" class="btn btn-info">自行前往</button>
+                <button type="submit" class="btn btn-info">一人一车</button>
+            </div>
+        </td>
+
+      </tr>
+    </tbody>
+</table>
+</div>
+{% endblock %}
+
+
+</body>
+</html>

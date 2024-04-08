@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/inpbox.css' %}">
+
+</head>
+
+<body>
+    <div class="form">
+        <div class="header">登录</div>
+        <div class="main">
+            <form method="post" novalidate>
+                {% csrf_token %}
+                <div class="inpbox">
+                    {{ form.username }}
+                    <p style="color: white";>{{ form.username.errors.0 }}</p>
+                </div>
+                <div class="inpbox">
+                    {{ form.password }}
+                    <p style="color: white";>{{ form.password.errors.0 }}</p>
+                </div>
+                <div class="action">
+                    <button type="submit" class="btn">登录</button>
+                    <a href="../signup/" class="btn" style="color: white; text-decoration: none;">注册</a>
+                    <p style="color: white">{{ error }}</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

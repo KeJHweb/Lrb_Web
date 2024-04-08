@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>报名点</title>
+</head>
+<body>
+<div class="container mt-3">
+  <table class="table table-hover">
+
+    <tbody>
+      <tr>
+        <td><img src="{% static 'img/scene4.jpg' %} " class="img-thumbnail" alt="Cinque Terre" width="200" height="200"></td>
+        <td>阳光驾校(铁机路保利城店)</td>
+        <td>湖北省武汉市洪山区阳光驾校总部直营(铁机路保利城店)铁机西路保利城与融海杰</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
+{% endblock %}
